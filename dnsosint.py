@@ -16,7 +16,7 @@ os.system("clear")
 
 print ("[*] Dnslookup Helper")
 
-domain = raw_input("\n\n[*] Please enter domain name: ")
+domain = input("\n\n[*] Please enter domain name: ")
 
 def dirb_scan():
 
@@ -24,15 +24,15 @@ def dirb_scan():
 
     while True:
         
-        Dir_wordlist = raw_input("%s@dnsscan: "%(hostname))
+        Dir_wordlist = input("%s@dnsscan: "%(hostname))
 
         if Dir_wordlist in ("Y","y"):
             print ("\n\n[*] Starting dirb..")
             print ("\n\n[*] Please enter URL PATH of domain to scan. Ex. 'http://expamle.com/': ")
-            dirscaninput = raw_input("\n%s@dnsscan: "%(hostname))
+            dirscaninput = input("\n%s@dnsscan: "%(hostname))
             dirbscanstart = ("dirb %s" % (dirscaninput)) 
             os.system(dirbscanstart)
-            raw_input("\n\n[*] Press 'Enter' to continue..\n\n")
+            input("\n\n[*] Press 'Enter' to continue..\n\n")
             break
 
         elif Dir_wordlist in ("N", "n"):
@@ -75,7 +75,7 @@ def common_record_scan():
     os.system(txtscan)
     print ("\n")   
 
-    zone_transfer = raw_input("Would you like to perform a Zone Transfer? Y/n: ")
+    zone_transfer = input("Would you like to perform a Zone Transfer? Y/n: ")
     
     if zone_transfer in ("Y", "y"):
         Zone_Transfer()
@@ -85,7 +85,7 @@ def common_record_scan():
 
 def Zone_Transfer():
     #user inputs the dns server
-    dns = raw_input("\n[*] Please enter dns sever to attempt Zone Transfer: ")
+    dns = input("\n[*] Please enter dns sever to attempt Zone Transfer: ")
     time.sleep(1)
     print ("\n[*] Attempting Zone Transfer..\n\n")
     query = ("host -l %s %s"% (domain, dns))
