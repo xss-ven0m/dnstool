@@ -7,7 +7,7 @@ import time
 import socket
 
 #Making sure that 'host' tool is installed, (DEBIAN ONLY)
-os.system("apt-get install host")
+os.system("pkg install host")
 
 hostname = socket.gethostname()
 
